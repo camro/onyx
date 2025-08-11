@@ -188,6 +188,7 @@ export interface ConnectorIndexingStatusLite {
   is_editable: boolean;
   docs_indexed: number;
   in_repeated_error_state: boolean;
+  latest_index_attempt_docs_indexed: number | null;
 }
 
 export interface FederatedConnectorStatus {
@@ -545,4 +546,5 @@ export interface IndexingStatusRequest {
   docs_count_value?: number | null;
   source_to_page?: Record<ValidSources, number>;
   source?: ValidSources;
+  get_all_connectors?: boolean;
 }
